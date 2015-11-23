@@ -1,0 +1,23 @@
+{
+  "name": "do-automatinator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.coffee",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://bessbd@github.org/bessbd/do-automatinator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://github.org/bessbd/do-automatinator#readme",
+  "dependencies": {
+    "async": "^1.5.0",
+    "coffee-script": "^1.10.0",
+    "moment": "^2.10.6",
+    "request": "^2.65.0",
+    "underscore": "^1.8.3"
+  }
+}
