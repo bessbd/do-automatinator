@@ -1,7 +1,10 @@
 #!/usr/bin/env coffee
 require 'coffee-script/register'
 path = require 'path'
-config = require path.join(process.env[if process.platform == 'win32' then 'USERPROFILE' else 'HOME'], '.doautomator.json')
+try
+  config = require path.join(process.env[if process.platform == 'win32' then 'USERPROFILE' else 'HOME'], '.doautomator.json')
+catch
+  console.log 'Warning: no config file found'
 request = require 'request'
 _ = require 'underscore'
 async = require 'async'
@@ -127,6 +130,7 @@ actions =
   settoken: ->
     fs.writeFile path.join(process.env[if process.platform == 'win32' then 'USERPROFILE' else 'HOME'], '.doautomator.json'),
                            JSON.stringify(token: process.argv[3])
+    console.log 'Config file written'
   restore: ->
     async.parallel
       snapshot: (cb) ->
